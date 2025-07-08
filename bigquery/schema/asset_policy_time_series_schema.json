@@ -5,6 +5,21 @@
       "mode": "NULLABLE"
     },
     {
+      "name": "customer_id",
+      "type": "INTEGER",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "customer_descriptive_name",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "asset_type",
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
       "name": "asset_policy_summary_approval_status",
       "type": "STRING",
       "mode": "NULLABLE"

@@ -196,9 +196,14 @@ def extract_time_series(gaarf_report: GaarfReport,
     """
     logger.info('Creating time series')
     report_df = gaarf_report.to_pandas()
-    report_df = report_df.groupby([
-        TIME_SERIES_DATE_COLUMN, report_config.time_series_variable_column
-    ]).size().reset_index(name='counts')
+
+    dimensions = [TIME_SERIES_DATE_COLUMN]
+    if isinstance(report_config.time_series_variable_columns, str):
+        dimensions += [report_config.time_series_variable_columns]
+    elif isinstance(report_config.time_series_variable_columns, list):
+        dimensions += report_config.time_series_variable_columns
+
+    report_df = report_df.groupby(dimensions).size().reset_index(name='counts')
 
     return GaarfReport.from_pandas(report_df)
 

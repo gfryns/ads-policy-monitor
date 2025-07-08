@@ -24,7 +24,7 @@ class ReportConfig(BaseModel):
     builtin_query_name: Optional[str] = None
     gaql_filenames: Optional[Union[str, List[str]]] = None
     time_series_table_name: Optional[str] = None
-    time_series_variable_column: Optional[str] = None
+    time_series_variable_columns: Optional[Union[str, List[str]]] = None
 
 
 class Payload(BaseModel):

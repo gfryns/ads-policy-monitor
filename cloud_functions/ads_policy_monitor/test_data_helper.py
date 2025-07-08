@@ -210,3 +210,13 @@ TEST_EXPECTED_TIME_SERIES = {
     ],
     'counts': [3, 1]
 }
+
+TEST_EXPECTED_TIME_SERIES_MULTIPLE_DIMENSIONS = {
+    'event_date': ['2023-10-26', '2023-10-27'],
+    'customer_id': [12345, 12345],
+    'asset_type': ['CALLOUT', 'CALLOUT'],
+    'asset_policy_summary_approval_status': [
+        'APPROVED_LIMITED', 'APPROVED_LIMITED'
+    ],
+    'counts': [3, 1]
+}
