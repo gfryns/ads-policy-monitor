@@ -25,5 +25,4 @@ FROM
   customer_asset
 WHERE
   customer.status = 'ENABLED'
-  AND asset.policy_summary.approval_status != 'APPROVED'
   AND segments.date DURING LAST_30_DAYS

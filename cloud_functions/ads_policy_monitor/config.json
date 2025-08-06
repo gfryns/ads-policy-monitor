@@ -31,6 +31,12 @@
       "is_builtin": false,
       "is_asset_report": true,
       "gaql_filenames": ["campaign_asset.sql", "ad_group_asset.sql", "customer_asset.sql"]
+    },
+    {
+      "table_name": "AdGroupAdsDailyMetrics",
+      "write_disposition": "WRITE_TRUNCATE",
+      "is_builtin": false,
+      "gaql_filenames": "ad_group_ads_daily_metrics.sql"
     }
   ]
 }

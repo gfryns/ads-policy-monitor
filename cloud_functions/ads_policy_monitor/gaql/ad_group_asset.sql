@@ -11,7 +11,7 @@
 -- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 -- See the License for the specific language governing permissions and
 -- limitations under the License.
-SELECT 
+SELECT
   {{ today }} AS event_date,
   customer.id,
   customer.descriptive_name,
@@ -30,7 +30,6 @@ FROM
   ad_group_asset
 WHERE
   customer.status = 'ENABLED'
-  AND asset.policy_summary.approval_status != 'APPROVED'
   AND campaign.status = 'ENABLED'
   AND campaign.primary_status != 'ENDED'
   AND ad_group.status = 'ENABLED'
