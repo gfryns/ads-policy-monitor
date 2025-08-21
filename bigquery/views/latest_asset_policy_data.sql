@@ -21,7 +21,7 @@ WITH NormalizedData AS (
     -- This subquery splits the topics, sorts them, and rejoins them into a canonical string
     (
       SELECT STRING_AGG(topic, '|' ORDER BY topic)
-      FROM UNNEST(SPLIT(asset_policy_summary_policy_topic_entries_topics, '|')) AS topic
+      FROM UNNEST(SPLIT(IFNULL(asset_policy_summary_policy_topic_entries_topics, ''), '|')) AS topic
     ) AS normalized_policy_topics
   FROM
     `${BQ_DATASET}.AssetPolicyData`
